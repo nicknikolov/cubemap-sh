@@ -1,0 +1,33 @@
+{
+  "name": "cubemap-sh",
+  "version": "0.1.0",
+  "description": "generate spherical harmonics from a cubemap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicknikolov/cubemap-sh.git"
+  },
+  "keywords": [
+    "spherical",
+    "harmonics",
+    "ambient",
+    "light",
+    "global",
+    "illumination",
+    "diffuse",
+    "light",
+    "irradiance",
+    "cubemap",
+    "gl",
+    "webgl"
+  ],
+  "author": "nick nikolov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicknikolov/cubemap-sh/issues"
+  },
+  "homepage": "https://github.com/nicknikolov/cubemap-sh#readme"
+}
