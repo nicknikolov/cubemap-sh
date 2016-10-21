@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/nicknikolov/cubemap-sh/issues"
   },
-  "homepage": "https://github.com/nicknikolov/cubemap-sh#readme"
+  "homepage": "https://github.com/nicknikolov/cubemap-sh#readme",
+  "dependencies": {
+    "gl-vec3": "^1.0.3"
+  }
 }
