@@ -1,4 +1,5 @@
 const vec3 = require('gl-vec3')
+const assert = require('assert')
 
 const cubemapFaceNormals = [
   [ [0, 0, -1], [0, -1, 0], [1, 0, 0] ],  // posx
@@ -14,6 +15,8 @@ const cubemapFaceNormals = [
 // give me a cubemap, its size and number of channels
 // and i'll give you spherical harmonics
 module.exports = function (faces, cubemapSize, ch) {
+  assert.ok(Array.isArray(faces), 'cubemap-sh: faces should be an array')
+  assert.equal(faces.length, 6, 'cubemap-sh: faces should have 6 elements')
   const size = cubemapSize || 128
   const channels = ch || 4
   const cubeMapVecs = []
