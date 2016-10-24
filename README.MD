@@ -6,21 +6,21 @@
 
 Generate spherical harmonics from a cubemap. The example screenshot shows them used to cheaply generate environmental diffuse light for a mesh.
 
-## installing
-`$ npm i cubemap-sh`
+## Installing
+`$ npm i -S cubemap-sh`
 
-## usage
+## Usage
 You pass in:
 - an array of faces in the shown order (opengl order)
 - size of each face (default is `128`)
 - number of channels (3 for rgb or 4 for rgba, default is `4`)
-```
+```javascript
 const coefficients = sh([posx, negx, posy, negy, posz, negz], CUBE_MAP_SIZE, NUM_CHANNELS)
 ```
 What you get back is an array of 9 `vec3`s (an array of arrays, each one having 3 elements for r g and b).
 To use them for example to light up your mesh, you can use the corresponding `glsl-sh` module and pass them to a shader
 that looks like this:
-```
+```glsl
 precision mediump float;
 #pragma glslify: sh = require('./assets/glsl/sh.glsl') // import using glslify
 varying vec3 vViewNormal;
@@ -35,10 +35,15 @@ void main() {
 ```
 Please note this example uses `glslify`.
 
-## api
+## API
 `const sh = require('cubemap-sh')`
 ### sh([faces], cubemapSize=128, numberOfChannels=4)
-(array, int?, int?) -> array
+faces:
+- faces: array of 6 cubemap faces in opengl order ([psx, negx, posy, negy, posz, negz]). each face is an array of pixels
+- cubemapSize: size of each face, default is `128`
+- numberofChannels: 3 for rgb textures, 4, for rgba. defaults to `4`
+
+returns array of 9 `vec3`s
 
 ## License
 MIT
