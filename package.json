@@ -1,6 +1,6 @@
 {
   "name": "cubemap-sh",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "generate spherical harmonics from a cubemap",
   "main": "index.js",
   "scripts": {
