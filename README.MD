@@ -18,7 +18,7 @@ You pass in:
 const coefficients = sh([posx, negx, posy, negy, posz, negz], CUBE_MAP_SIZE, NUM_CHANNELS)
 ```
 What you get back is an array of 9 `vec3`s (an array of arrays, each one having 3 elements for r g and b).
-To use them for example to light up your mesh, you can use the corresponding `glsl-sh` module and pass them to a shader
+To use them for example to light up your mesh, you can use the corresponding [glsl-sh](https://github.com/nicknikolov/glsl-sh) module and pass them to a shader
 that looks like this:
 ```glsl
 precision mediump float;
@@ -33,7 +33,7 @@ void main() {
   gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(1.0 / 2.2)); // gamma correction
 }
 ```
-Please note this example uses `glslify`.
+Please note this example uses [glslify](https://github.com/stackgl/glslify).
 
 ## API
 `const sh = require('cubemap-sh')`
