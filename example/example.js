@@ -1,7 +1,7 @@
 const glsl = require('glslify')
 const mat4 = require('gl-mat4')
 const vec3 = require('gl-vec3')
-const regl = require('regl')()
+const regl = require('regl')({ pixelRatio: 1 })
 const sh = require('../index.js')
 const snowden = require('snowden')
 const normals = require('angle-normals')(snowden.cells, snowden.positions)
