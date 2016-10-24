@@ -43,7 +43,7 @@ faces:
 - cubemapSize: size of each face, default is `128`
 - numberOfChannels: 3 for rgb textures, 4, for rgba. defaults to `4`
 
-returns array of 9 `vec3`s
+returns array of 9 `vec3`s which correspond to the spherical harmonics coefficients for the first 2 bands (3 levels) for each of the color channels (RGB) in linear color space
 
 ## License
 MIT
