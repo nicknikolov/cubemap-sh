@@ -62,6 +62,8 @@ module.exports = function (faces, cubemapSize, ch) {
 
   faces.forEach((face, index) => {
     const pixels = face
+    let gammaCorrect = true
+    if (Object.prototype.toString.call(pixels) === '[object Float32Array]') gammaCorrect = false // this is probably HDR image, already in linear space
     for (let y = 0; y < size; y++) {
       for (let x = 0; x < size; x++) {
         const texelVect = cubeMapVecs[index][y * size + x]
@@ -80,6 +82,7 @@ module.exports = function (faces, cubemapSize, ch) {
 
         for (let c = 0; c < 3; c++) {
           let value = pixels[y * size * channels + x * channels + c] / 255
+          if (gammaCorrect) value = Math.pow(value, 2.2)
 
           // indexed by coeffiecent + color
           sh[0][c] += value * weight1
