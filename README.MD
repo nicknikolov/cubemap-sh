@@ -2,7 +2,9 @@
 
 [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
 
-Generate spherical harmonics from a cubemap.
+![alt text](https://github.com/nicknikolov/cubemap-sh/example/snowden.jpg "Snowden")
+
+Generate spherical harmonics from a cubemap. The example screenshot shows them used to cheaply generate environmental diffuse light for a mesh.
 
 ## installing
 `$ npm i cubemap-sh`
