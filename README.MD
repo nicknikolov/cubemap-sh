@@ -39,9 +39,9 @@ Please note this example uses [glslify](https://github.com/stackgl/glslify).
 `const sh = require('cubemap-sh')`
 ### sh([faces], cubemapSize=128, numberOfChannels=4)
 faces:
-- faces: array of 6 cubemap faces in opengl order ([psx, negx, posy, negy, posz, negz]). each face is an array of pixels
+- faces: array of 6 cubemap faces in opengl order ([psx, negx, posy, negy, posz, negz]), each face is an array of pixels
 - cubemapSize: size of each face, default is `128`
-- numberofChannels: 3 for rgb textures, 4, for rgba. defaults to `4`
+- numberOfChannels: 3 for rgb textures, 4, for rgba. defaults to `4`
 
 returns array of 9 `vec3`s
 
