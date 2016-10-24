@@ -77,18 +77,18 @@ const drawSnowden = regl({
   attribute vec3 position, normal;
   uniform mat4 projection, view, invView;
   varying vec3 reflectDir;
-  varying vec3 vNormal;
+  varying vec3 vWorldNormal;
   void main() {
-    vNormal = normal;
+    vWorldNormal = normal;
     gl_Position = projection * view * vec4(position, 1);
   }`,
   frag: glsl`
   precision mediump float;
   #pragma glslify: sh = require('./sh.glsl')
-  varying vec3 vNormal;
+  varying vec3 vWorldNormal;
   uniform vec3 c[9];
   void main() {
-    vec3 n = normalize(vNormal);
+    vec3 n = normalize(vWorldNormal);
     vec3 color = sh(c, n);
     gl_FragColor = vec4(color, 1.0);
     gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(1.0 / 2.2));
