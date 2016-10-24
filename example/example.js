@@ -13,7 +13,6 @@ const setupEnvMap = regl({
   varying vec3 reflectDir;
   void main () {
     gl_FragColor = textureCube(envmap, normalize(reflectDir));
-    gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(1.0 / 2.2));
   }`,
   uniforms: {
     envmap: regl.prop('cube'),
@@ -91,7 +90,7 @@ const drawSnowden = regl({
     vec3 n = normalize(vWorldNormal);
     vec3 color = sh(c, n);
     gl_FragColor = vec4(color, 1.0);
-    gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(1.0 / 2.2));
+    gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(1.0 / 2.2)); // bring color back to gamma space
   }`,
   attributes: {
     position: snowden.positions,
